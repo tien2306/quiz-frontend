@@ -1,0 +1,79 @@
+.layout-default {
+  &__header {
+    background: orange;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  &__logo {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__main {
+    padding: 20px;
+  }
+
+  &__footer {
+    background: orange;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  &__divide {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.menu {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    li {
+      margin-left: 20px;
+      position: relative;
+    }
+  }
+  &__link {
+    color: #000;
+    text-decoration: none;
+
+    &--active {
+      color: blue;
+      text-decoration: none;
+    }
+  }
+
+  &__sub {
+    position: absolute;
+    top: 100%;
+    background: yellowgreen;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    display: none !important;
+
+    li {
+      margin: 0 !important;
+    }
+
+    a {
+      white-space: nowrap;
+      display: block;
+      padding: 4px 10px;
+    }
+  }
+
+  li:hover > &__sub {
+    display: flex !important;
+  }
+}

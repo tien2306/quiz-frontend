@@ -1,0 +1,91 @@
+// Định nghĩa các biến màu đồng bộ với trang Home
+$primary-color: #ff9f00;
+$primary-hover: #e08b00;
+$text-main: #333333;
+$text-sub: #666666;
+$bg-body: #f5f5f5;
+$white: #ffffff;
+$border-color: #ddd;
+
+// Khung bọc ngoài cùng để căn giữa toàn bộ trang login
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; // Đẩy form xuống giữa màn hình
+  background-color: $bg-body;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+// Định dạng form đăng nhập chính
+.login-form {
+  background-color: $white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); // Tạo độ nổi nhẹ cho form
+  width: 100%;
+  max-width: 400px; // Chiều rộng tối đa của form
+
+  &__title {
+    text-align: center;
+    margin: 0 0 30px 0;
+    color: $text-main;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  // Cụm input + label
+  &__group {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    color: $text-sub;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  // Định dạng các ô nhập liệu
+  &__input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    font-size: 15px;
+    color: $text-main;
+    box-sizing: border-box; // Giúp padding không làm tăng chiều rộng input
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color; // Đổi màu viền khi bấm vào ô input
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+  }
+
+  // Nút bấm đăng nhập
+  &__btn {
+    width: 100%;
+    padding: 14px;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+
+    &:active {
+      transform: scale(0.98); // Hiệu ứng lún nhẹ khi click chuột
+    }
+  }
+}

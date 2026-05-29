@@ -1,0 +1,114 @@
+$primary-color: #ff9f00;
+$text-main: #222222;
+$text-sub: #666666;
+$bg-card: #ffffff;
+$border-color: #e5e7eb;
+
+.home {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: $text-main;
+
+  // Phần giới thiệu trên cùng nhẹ nhàng, không dùng nền màu
+  &__hero {
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: $text-sub;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  // Bố cục grid cho 2 card nằm song song gọn gàng
+  &__actions.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  // Card thiết kế tinh tế: nền trắng, viền xám mảnh, hover đổ bóng nhẹ
+  &__card {
+    background: $bg-card;
+    border: 1px solid $border-color;
+    padding: 30px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: $text-main;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: $primary-color;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    &-icon {
+      font-size: 28px;
+      color: $primary-color;
+      margin-bottom: 16px;
+    }
+
+    &-title {
+      font-size: 18px;
+      margin: 0 0 8px 0;
+      font-weight: 600;
+    }
+
+    &-desc {
+      font-size: 14px;
+      color: $text-sub;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  // Nút bấm cho trạng thái chưa đăng nhập
+  &__buttons {
+    display: flex;
+    // justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  &__btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &--primary {
+      background: $primary-color;
+      color: #fff;
+      border: 1px solid $primary-color;
+
+      &:hover {
+        background: darkorange;
+      }
+    }
+
+    &--outline {
+      background: transparent;
+      color: $text-main;
+      border: 1px solid $border-color;
+
+      &:hover {
+        background: #f9fafb;
+        border-color: #cbd5e1;
+      }
+    }
+  }
+}
