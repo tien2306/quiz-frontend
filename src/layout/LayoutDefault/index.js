@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./layoutDefault.scss";
-import { getCookie } from "../../helpers/cookie";
-// import { useSelector } from "react-redux";
+// import { getCookie } from "../../helpers/cookie";
+import { useSelector } from "react-redux";
 
 function LayoutDefault() {
   // cách set lại tên class của navlink
@@ -12,7 +12,10 @@ function LayoutDefault() {
     return e.isActive ? "menu__link--active" : "menu__link";
   };
 
-  const token = getCookie("token");
+  // const token = getCookie("token");
+  // console.log(token);
+  const isLogin = useSelector((state) => state.loginReducer);
+  // console.log(isLogin);
   return (
     <>
       <div className="layout-default">
@@ -31,7 +34,7 @@ function LayoutDefault() {
                 (nó tương tự như thẻ <a> trong HTML). */}
                   {/* Navlink - tương tự trên và nó add thêm class active khi url trùng với link của navlink */}
                 </li>
-                {token && (
+                {isLogin && (
                   <>
                     <li>
                       <NavLink className={navlinkActive} to="/topics">
@@ -54,7 +57,7 @@ function LayoutDefault() {
               </ul>
             </div>
             <div className="layout default__account">
-              {token ? (
+              {isLogin ? (
                 <>
                   <NavLink to="/logout"> Đăng xuất</NavLink>
                 </>
