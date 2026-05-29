@@ -34,7 +34,7 @@ function Quiz() {
     };
 
     fetchApi();
-  }, []);
+  }, [params.id, navigate]);
 
   // console.log(dataTopic);
 

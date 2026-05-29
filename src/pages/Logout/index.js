@@ -13,7 +13,7 @@ function Logout() {
   useEffect(() => {
     dispatch(checkLogin(false));
     navigate("/");
-  }, []);
+  }, [dispatch, navigate]);
   return (
     <>
       <></>

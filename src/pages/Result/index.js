@@ -31,7 +31,7 @@ function Result() {
     };
 
     fetchApi();
-  }, []);
+  }, [params.id, navigate]);
 
   let correctCount = 0;
 
