@@ -16,8 +16,8 @@ Nó chỉ là một ứng dụng web đơn giản hỗ trợ người dùng luy�
 
 ### Backend 
 * **Database & API:**
-*  **Sử dụng API giả lập (Fake API) chạy qua JSON Server để mô phỏng một hệ thống cơ sở dữ liệu thực tế.
-*  **Server được deploy độc lập trên nền tảng Cloud Render 
+  Sử dụng API giả lập (Fake API) chạy qua JSON Server để mô phỏng một hệ thống cơ sở dữ liệu thực tế.
+  Server được deploy độc lập trên nền tảng Cloud Render 
 
 ---
 
