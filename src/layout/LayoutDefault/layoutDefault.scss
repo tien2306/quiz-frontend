@@ -58,6 +58,11 @@
     }
   }
 
+  .menu ul {
+    display: flex;
+    gap: 25%;
+  }
+
   .menu li {
     list-style-type: none;
   }
