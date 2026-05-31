@@ -1,4 +1,4 @@
-const API_DOMAIN = process.env.REACT_APP_API_URL;
+const API_DOMAIN = process.env.REACT_APP_API_URL || "http://localhost:3003/";
 
 export const get = async (path) => {
   const res = await fetch(API_DOMAIN + path);
@@ -36,6 +36,6 @@ export const patch = async (option, path) => {
     },
     body: JSON.stringify(option),
   });
-  const result = respone.json();
+  const result = await respone.json();
   return result;
 };

@@ -13,6 +13,7 @@ $border-color: #e5e7eb;
     -apple-system,
     sans-serif;
   color: $text-main;
+  min-height: 80vh;
 
   // Phần giới thiệu trên cùng nhẹ nhàng, không dùng nền màu
   &__hero {
