@@ -74,6 +74,7 @@ function Login() {
           htmlType="submit"
           className="login-form__btn"
           loading={loading}
+          disabled={loading}
           block
           size="large"
         >
