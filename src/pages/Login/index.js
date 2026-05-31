@@ -4,15 +4,19 @@ import { login } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
 import { checkLogin } from "../../actions/login";
 import "./login.scss";
+import { Button } from "antd";
+import { useState } from "react";
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const email = e.target[0].value.trim();
     const password = e.target[1].value.trim();
+    setLoading(true);
     const res = await login(email, password);
 
     if (res.length > 0) {
@@ -30,10 +34,12 @@ function Login() {
       // });
 
       dispatch(checkLogin(true));
+      setLoading(false);
       navigate("/");
       alert("Đăng nhập thành công");
     } else {
       alert("Sai tài khoản hoặc mật khẩu");
+      setLoading(false);
     }
   };
   return (
@@ -63,9 +69,16 @@ function Login() {
           />
         </div>
 
-        <button type="submit" className="login-form__btn">
+        <Button
+          type="primary"
+          htmlType="submit"
+          className="login-form__btn"
+          loading={loading}
+          block
+          size="large"
+        >
           Đăng Nhập
-        </button>
+        </Button>
       </form>
     </div>
   );
